@@ -9,6 +9,7 @@ COMMAND_HANDLERS = {
     "start": handlers.start,
     "help": handlers.help,
     "add_book": handlers.add_book,
+    "get_book": handlers.get_book,
 }
 
 logger = setup_logger()
