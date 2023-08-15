@@ -28,3 +28,10 @@ Use /add_book <title> <img_link> <bg_img_link>
 ADD_BOOK_SUCCES = """Book inserted successfully!"""
 
 ADD_BOOK_FAILED = """Failed to insert book."""
+
+GET_BOOK_INVALID = """Invalid usage. 
+
+Use /get_book <title>
+"""
+
+GET_BOOK_FAILED = """Book not found."""
