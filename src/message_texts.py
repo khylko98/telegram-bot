@@ -19,3 +19,12 @@ HELP = """Here helpful info for all command:
 /help - just write this command to get this message;
 ...
 """  # TODO: write description for future commands;
+
+ADD_BOOK_INVALID = """Invalid usage. 
+
+Use /add_book <title> <img_link> <bg_img_link>
+"""
+
+ADD_BOOK_SUCCES = """Book inserted successfully!"""
+
+ADD_BOOK_FAILED = """Failed to insert book."""
