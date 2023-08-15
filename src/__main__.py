@@ -5,7 +5,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler
 from logging_config import setup_logger
 
 
-COMMAND_HANDLERS = {"start": handlers.start}
+COMMAND_HANDLERS = {"start": handlers.start, "help": handlers.help}
 
 logger = setup_logger()
 
