@@ -12,3 +12,10 @@ My commands:
 /add_chapter - add chapter to database (need book_id);
 /get_chapter - get chapter from database;
 """
+
+HELP = """Here helpful info for all command:
+
+/start - just write this command to get starting message;
+/help - just write this command to get this message;
+...
+"""  # TODO: write description for future commands;
