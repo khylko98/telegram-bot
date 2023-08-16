@@ -1,6 +1,6 @@
 import config, handlers
 
-from telegram.ext import ApplicationBuilder, CommandHandler
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 
 from logging_config import setup_logger
 
@@ -26,6 +26,9 @@ def main():
 
     for command_name, command_handler in COMMAND_HANDLERS.items():
         app.add_handler(CommandHandler(command_name, command_handler))
+
+    add_chapter_handler = MessageHandler(filters.AUDIO, handlers.add_chapter)
+    app.add_handler(add_chapter_handler)
 
     app.run_polling()
 
