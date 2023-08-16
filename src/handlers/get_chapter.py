@@ -3,38 +3,37 @@ from telegram.ext import ContextTypes
 
 from logging_config import setup_logger
 
-from message_texts import ADD_BOOK_INVALID, ADD_BOOK_SUCCES, ADD_BOOK_FAILED
+from message_texts import GET_CHAPTER_INVALID, GET_CHAPTER_FAILED
 
-from services.books import insert_book
+from services.chapters import get_chapter_by_title
 
 
 logger = setup_logger()
 
 
-async def add_book(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def get_chapter(update: Update, context: ContextTypes.DEFAULT_TYPE):
     effective_chat = update.effective_chat
     if not effective_chat:
         logger.warning("effective_chat in None")
         return
 
     command_parts = update.message.text.split(" ")
-    if len(command_parts) < 4:
+    if len(command_parts) < 2:
         await context.bot.send_message(
             chat_id=effective_chat.id,
-            text=ADD_BOOK_INVALID,
+            text=GET_CHAPTER_INVALID,
         )
         return
 
-    title = " ".join(command_parts[1:-2])
-    img_link = command_parts[-2]
-    bg_img_link = command_parts[-1]
-    if insert_book(title, img_link, bg_img_link):
+    title = " ".join(command_parts[1:])
+    chapter = get_chapter_by_title(title)
+    if chapter:
         await context.bot.send_message(
             chat_id=effective_chat.id,
-            text=ADD_BOOK_SUCCES,
+            text=f"Chapter found:\n id: {chapter.id},\n title: {chapter.title},\n audio_link: {chapter.audio_link}",
         )
     else:
         await context.bot.send_message(
             chat_id=effective_chat.id,
-            text=ADD_BOOK_FAILED,
+            text=GET_CHAPTER_FAILED,
         )

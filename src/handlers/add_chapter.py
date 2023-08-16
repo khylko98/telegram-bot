@@ -31,7 +31,6 @@ async def add_chapter(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     title = file_name[2:-4]
     book_id = file_name[0]
-    print(title + "\n" + book_id + "\n" + file_path)
     if insert_chapter(book_id, title, file_path):
         await context.bot.send_message(
             chat_id=effective_chat.id,

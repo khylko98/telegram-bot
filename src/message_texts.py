@@ -41,3 +41,10 @@ ADD_CHAPTER_NO_AUDIO = """Please upload audiofile."""
 ADD_CHAPTER_SUCCES = """Chapter inserted successfully!"""
 
 ADD_CHAPTER_FAILED = """Failed to insert chapter."""
+
+GET_CHAPTER_INVALID = """Invalid usage. 
+
+Use /get_chapter <title>
+"""
+
+GET_CHAPTER_FAILED = """Chapter not found."""
