@@ -31,6 +31,8 @@ def main():
     add_chapter_handler = MessageHandler(filters.AUDIO, handlers.add_chapter)
     app.add_handler(add_chapter_handler)
 
+    app.add_error_handler(handlers.error)
+
     app.run_polling()
 
 
