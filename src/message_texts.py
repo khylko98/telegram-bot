@@ -35,3 +35,9 @@ Use /get_book <title>
 """
 
 GET_BOOK_FAILED = """Book not found."""
+
+ADD_CHAPTER_NO_AUDIO = """Please upload audiofile."""
+
+ADD_CHAPTER_SUCCES = """Chapter inserted successfully!"""
+
+ADD_CHAPTER_FAILED = """Failed to insert chapter."""
